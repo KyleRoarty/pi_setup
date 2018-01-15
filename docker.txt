@@ -1,0 +1,6 @@
+to install easily:
+curl -sSL https://get.docker.com | sh
+
+for docker-compose: Follow instructions
+https://www.berthon.eu/2017/getting-docker-compose-on-raspberry-pi-arm-the-easy-way/
+except for the patch section (cp -i Dockerfile Dockerfile.armhf ...)
