@@ -1,0 +1,5 @@
+Install using http://blog.rylander.io/2017/06/15/run-pi-hole-in-a-docker-container/
+Sample yaml file included.
+
+Main things to remember: docker-compose up -d, docker-compose down
+To update: docker pull diginc/pi-hole-multiarch:debian_armhf; docker-compose down; docker-compose up -d

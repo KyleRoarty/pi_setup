@@ -1,0 +1,21 @@
+version: "3"
+services:
+  pihole:
+    container_name: pihole
+    image: diginc/pi-hole-multiarch:debian_armhf
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"
+    environment:
+      - ServerIP=192.168.1.107
+      - TZ=America/Chicago
+      - WEBPASSWORD=
+      - DNS1=208.67.222.222
+      - DNS2=208.67.220.220
+      - VIRTUAL_HOST=pihole.local
+    volumes:
+      - '/home/pi/config/pihole/:/etc/pihole/'
+      - '/home/pi/config/pihole/dnsmasq.d/:/etc/dnsmasq.d/'
+      - '/var/log/pihole.log:/var/log/pihole.log'
+    restart: unless-stopped
